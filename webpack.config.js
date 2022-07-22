@@ -26,6 +26,9 @@ module.exports = (env, argv) => {
         ruleForHtml,
       ]
     },
+    experiments: {
+      topLevelAwait: true
+    },
     plugins: [
       new HtmlWebpackPlugin({ template: 'src/index.html' }) // Modify template if necessary
     ],
