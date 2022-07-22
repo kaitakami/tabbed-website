@@ -1,0 +1,39 @@
+{
+  "name": "tabbed-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "webpack serve --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaitakami/tabbed-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaitakami/tabbed-website/issues"
+  },
+  "homepage": "https://github.com/kaitakami/tabbed-website#readme",
+  "dependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.3",
+    "autoprefixer": "^10.4.7",
+    "css-loader": "^6.7.1",
+    "daisyui": "^2.19.0",
+    "date-fns": "^2.28.0",
+    "html-loader": "^3.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.0",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.1.4",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
