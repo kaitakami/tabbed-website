@@ -1,5 +1,5 @@
-export { clearContent }
+export { clearContent };
 
 const clearContent = (container) => {
-  container.innerHTML = ''
-}
+  container.innerHTML = '';
+};

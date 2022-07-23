@@ -1,4 +1,5 @@
-export { renderContent }
+export { renderContent };
+const Blog = await import('./blog.mjs');
 
 const renderContent = (container) => {
   // Factory function
@@ -7,21 +8,14 @@ const renderContent = (container) => {
       title,
       level,
       image: url,
-    }
+    };
   }
 
-  const cards = []
+  const cards = [];
 
-  cards.push(createCard("Introducción", "Para principiantes", "https://raw.githubusercontent.com/kaitakami/Web3-Aprende-Blockchain/main/github.png"))
-  cards.push(createCard("¿Qué es blockchain?", "Nivel intermedio", "https://raw.githubusercontent.com/kaitakami/Web3-Aprende-Blockchain/main/bitcoin-paper.png"))
-  cards.push(createCard("Lecturas recomendadas", "Nivel avanzado", "https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"))
-
-
-
-  //cards is an array with 3 objects (cards)
-  // Now we create a function to render each card in the HTML
-
-
+  cards.push(createCard('Introducción', 'Para principiantes', 'https://raw.githubusercontent.com/kaitakami/Web3-Aprende-Blockchain/main/github.png'));
+  cards.push(createCard('¿Qué es blockchain?', 'Nivel intermedio', 'https://raw.githubusercontent.com/kaitakami/Web3-Aprende-Blockchain/main/bitcoin-paper.png'));
+  cards.push(createCard('Lecturas recomendadas', 'Nivel avanzado', 'https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80'));
 
   cards.forEach((card, i) => {
     container.innerHTML += (`
@@ -31,14 +25,12 @@ const renderContent = (container) => {
         <h2 class="card-title">${card.title}</h2>
         <p>${card.level}</p>
         <div class="card-actions justify-end">
-          <button id="card-${i}-btn" class="btn btn-primary">Leer ahora</button>
+          <button id="card-${i}-btn" class="btn btn-primary card-btn">Leer ahora</button>
         </div>
       </div>
     </div>
-    `)
-
-
-  })
+    `);
+  });
 
   container.innerHTML = (`
   <div class="flex flex-col h-screen place-content-center pb-9">
@@ -47,6 +39,12 @@ const renderContent = (container) => {
       ${container.innerHTML}
     </div>
   </div>
-  `)
+  `);
 
-}
+  const cardsBtn = document.querySelectorAll('.card-btn');
+  cardsBtn.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      Blog.renderContent(i);
+    });
+  });
+};

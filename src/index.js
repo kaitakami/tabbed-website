@@ -1,9 +1,10 @@
-import './index.html'
-import './styles/global.css'
-const UI = await import ('./modules/UI.mjs')
-const Home = await import ('./modules/home.mjs')
+import './index.html';
+import './styles/global.css';
 
-const mainContainer = document.getElementById('container')
+const UI = await import('./modules/UI.mjs');
+const Home = await import('./modules/home.mjs');
+
+const mainContainer = document.getElementById('container');
 
 const loadPage = () => {
   mainContainer.innerHTML = (`
@@ -11,20 +12,20 @@ const loadPage = () => {
     <div class="hero-overlay bg-opacity-60"></div>
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
-          <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-          <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          <button id="starter-button" class="btn btn-primary">Get Started</button>
+          <h1 class="mb-5 text-5xl font-bold">Aprende sobre Blockchain</h1>
+          <p class="mb-5">Consigue 3 blogs para iniciarte en el mundo de la web3 y el blockchain con recursos extras para que puedas seguir aprendiendo.</p>
+          <button id="starter-button" class="btn btn-primary">inicia ahora</button>
         </div>
       </div>
     </div>
-    `)
-  }
-  
-  window.onload = loadPage()
-  
-  const starterButton = document.getElementById('starter-button')
-  
-  starterButton.addEventListener('click', () => {
-    UI.clearContent(mainContainer)
-    Home.renderContent(mainContainer)
-  })
+    `);
+};
+
+window.onload = loadPage();
+
+const starterButton = document.getElementById('starter-button');
+
+starterButton.addEventListener('click', () => {
+  UI.clearContent(mainContainer);
+  Home.renderContent(mainContainer);
+});

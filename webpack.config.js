@@ -11,6 +11,18 @@ const ruleForHtml = {
   loader: "html-loader"
 }
 
+const ruleForMd = {
+  test: /\.md$/,
+  use: [
+    {
+      loader: "html-loader",
+    },
+    {
+      loader: "markdown-loader",
+    },
+  ]
+}
+
 module.exports = (env, argv) => {
   const { mode } = argv
   const isProduction = mode === 'production'
@@ -24,6 +36,7 @@ module.exports = (env, argv) => {
       rules: [
         ruleForStyles,
         ruleForHtml,
+        ruleForMd
       ]
     },
     experiments: {
